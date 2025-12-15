@@ -1,0 +1,77 @@
+--- Soft Robot Simulation Session Started: 2025-12-14 14:48:39.945907 ---
+
+--- Soft Robot Configuration ---
+Select Material:
+1. EcoFlex 0050
+2. Dragon Skin 30
+3. Sylgard 184
+Enter number (1-3): 
+Select Constitutive Model:
+1. Neo-Hookean
+2. Mooney-Rivlin
+3. Ogden
+Enter number (1-3): 
+Configuration: EcoFlex 0050 with Ogden Model
+Material Validation:
+  E_approx (3*mu): 375000.00 Pa
+  E_full: 374687.76 Pa
+  Difference: 0.0833% (< 2% required)
+
+Enter number of segments (1-100): Creating robot with 10 segments...
+
+--- Input Actuation Pressures ---
+Valid Range: 0 to 120000 Pa (approx 1.2 atm)
+Enter Pressure P1 (0°): 1000
+Enter Pressure P2 (90°): 2000
+Enter Pressure P3 (180°): 3000
+Enter Pressure P4 (270°): 4000
+
+--- Forward Kinematics (P1=1000.0, P2=2000.0, P3=3000.0, P4=4000.0) ---
+Final Transformation Matrix T_total:
+[[ 0.89675216 -0.10324784 -0.43032018 -0.10266202]
+ [-0.10324784  0.89675216 -0.43032018 -0.10266202]
+ [ 0.43032018  0.43032018  0.79350431  0.42787855]
+ [ 0.          0.          0.          1.        ]]
+Tip Position p_ee: [-0.10266202 -0.10266202  0.42787855] m
+
+--- Section 5: Validation & Error Analysis ---
+Check 1: Arc Length Conservation
+  Calculated Arc Length: 0.460000 m
+  Total Pre-strained Length: 0.460000 m
+  Error: 5.551115e-17 m (PASS)
+Check 2: Maximum Material Strain
+  Seg 1: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 2: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 3: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 4: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 5: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 6: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 7: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 8: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 9: Total Strain = 0.1614 (Bend: 0.0114)
+  Seg 10: Total Strain = 0.1614 (Bend: 0.0114)
+  Max Strain: 0.1614 in Segment 1
+Check 3: Thin-Wall Assumption (t_w / R < 0.2)
+  Seg 1: Ratio = 0.150 (PASS)
+  Seg 2: Ratio = 0.150 (PASS)
+  Seg 3: Ratio = 0.150 (PASS)
+  Seg 4: Ratio = 0.150 (PASS)
+  Seg 5: Ratio = 0.150 (PASS)
+  Seg 6: Ratio = 0.150 (PASS)
+  Seg 7: Ratio = 0.150 (PASS)
+  Seg 8: Ratio = 0.150 (PASS)
+  Seg 9: Ratio = 0.150 (PASS)
+  Seg 10: Ratio = 0.150 (PASS)
+
+--- Section 6: Inverse Kinematics (4-Channel) ---
+
+--- Input Target Position for IK (meters) ---
+Enter Target X [Default 0.02]: 0.237
+Enter Target Y [Default 0.01]: 0
+Enter Target Z [Default 0.15]: 0.364
+Target: [0.237 0.    0.364]
+Success: True
+Pressures: P1=4992, P2=0, P3=0, P4=0 Pa
+Achieved: [0.2373616505951503, 0.0, 0.3643716470851977]
+Error: 0.52 mm
+Message: Success! Reached target within 0.52mm
